@@ -19,7 +19,7 @@ const Login = () => {
     }
   return (
     <div className="flex justify-center items-center h-screen flex-col gap-[50px]">
-        <h1 className="text-[50px] font-bold uppercase">Welcome to Employee Management App</h1>
+        <h1 className="text-[50px] font-bold uppercase max-w-[850px] m-auto text-center leading-[1.2]">Welcome to Employee Management System (EMS) App</h1>
       <div className="form-div w-[450px] p-[30px] rounded-[20px] bg-[#5c5c5c]">
         <h2 className="text-[45px] font-bold text-center mb-[20px]">Login</h2>
         <form className="flex flex-col gap-[30px] h-[400px] justify-center">
