@@ -250,9 +250,8 @@ export const setItems = () => {
 };
 
 export const getItems = () => {
-  const employeesData = localStorage.getItem('Employess');
-  const adminData = localStorage.getItem('Admin')
+  const employeesData = JSON.parse(localStorage.getItem('Employess'));
+  const adminData = JSON.parse(localStorage.getItem('Admin'));
 
-  console.log(JSON.parse(employeesData))
-  console.log(JSON.parse(adminData))
+  return {employeesData, adminData}
 };

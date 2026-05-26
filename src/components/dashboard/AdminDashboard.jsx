@@ -3,17 +3,17 @@ import Header from "../../others/Header";
 import CreateTask from "../../others/CreateTask";
 import AllTasks from "../../others/AllTasks";
 
-const AdminDashboard = () => {
+const AdminDashboard = ({handleLogout}) => {
   return (
     <div className="admin-dashboard">
       <div className="container">
         <div className="admin-dashboard-content">
-          <Header />
+          <Header handleLogout={handleLogout} />
           <CreateTask />
           <AllTasks />
         </div>
       </div>
-    </div>
+    </div>  
   );
 };
 

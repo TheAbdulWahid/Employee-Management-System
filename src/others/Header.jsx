@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AppContext } from "../context/AuthContext";
 
-const Header = () => {
+const Header = ({handleLogout}) => {
+
   return (
     <header className="px-[20px] py-[20px] flex justify-between items-end gap-[20px]">
           <div className="header-left">
@@ -13,7 +15,7 @@ const Header = () => {
           </div>
           <div className="header-right">
             <div className="btn logout-btn">
-              <button className="bg-red-400 px-[25px] py-[10px] text-white rounded">
+              <button onClick={handleLogout} className="bg-red-400 px-[25px] py-[10px] text-white rounded cursor-pointer">
                 Logout
               </button>
             </div>
