@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { AppContext } from "../context/AuthContext";
 
-const Header = ({handleLogout}) => {
+const Header = ({handleLogout,loggedinUserData}) => {
 
   return (
     <header className="px-[20px] py-[20px] flex justify-between items-end gap-[20px]">
@@ -9,7 +9,8 @@ const Header = ({handleLogout}) => {
             <div className="user-greetings text-[20px]">
               Hello,
               <span className="username block font-bold text-[30px]">
-                Abdul Wahid 👋
+                {loggedinUserData?.firstname || "User"} 👋
+                
               </span>
             </div>
           </div>
