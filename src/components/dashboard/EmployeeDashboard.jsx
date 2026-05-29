@@ -9,7 +9,7 @@ const EmployeeDashboard = ({handleLogout,loggedinUserData}) => {
       <div className="container">
         <div className="admindashboard-content">
           <Header handleLogout={handleLogout} loggedinUserData={loggedinUserData} />
-          <TaskListNumber />
+          <TaskListNumber loggedinUserData={loggedinUserData} />
           <TaskList />
         </div>
       </div>
