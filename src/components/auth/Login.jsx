@@ -5,6 +5,7 @@ import { AppContext } from "../../context/AuthContext";
 const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  
   const Submission = (e) => {
     e.preventDefault();
     console.log("Email is :", email);

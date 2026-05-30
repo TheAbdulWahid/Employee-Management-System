@@ -1,9 +1,10 @@
 import React from "react";
+import TaskCard from "./TaskCard";
 
 const TaskList = () => {
   return (
     <div className="tasklist p-[20px] flex flex-nowrap gap-[20px] overflow-x-auto scrollbar-none ">
-      <div className="taskbox w-[400px] bg-red-400 p-[30px] rounded min-h-[300px] shrink-0">
+      {/* <div className="taskbox w-[400px] bg-red-400 p-[30px] rounded min-h-[300px] shrink-0">
         <div className="taskbox-header flex items-center justify-between mb-[20px]">
           <div className="left">
             <p className="priority px-[10px] py-[4px] bg-red-600 rounded">High</p>
@@ -128,7 +129,8 @@ const TaskList = () => {
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
+      <TaskCard />
     </div>
   );
 };

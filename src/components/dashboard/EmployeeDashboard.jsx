@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../../others/Header";
 import TaskListNumber from "../../others/TaskListNumber";
 import TaskList from "../TaskList/TaskList";
+import TaskCard from "../TaskList/TaskCard";
 
 const EmployeeDashboard = ({handleLogout,loggedinUserData}) => {
   return (
@@ -10,7 +11,7 @@ const EmployeeDashboard = ({handleLogout,loggedinUserData}) => {
         <div className="admindashboard-content">
           <Header handleLogout={handleLogout} loggedinUserData={loggedinUserData} />
           <TaskListNumber loggedinUserData={loggedinUserData} />
-          <TaskList />
+          <TaskCard loggedinUserData={loggedinUserData}/>
         </div>
       </div>
     </div>

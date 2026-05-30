@@ -5,6 +5,7 @@ export const AppContext = createContext();
 
 const AuthContext = ({ children }) => {
   const [userData, setUserData] = useState([]);
+  
   useEffect(() => {
     setItems();
     const { adminData, employeesData } = getItems();
