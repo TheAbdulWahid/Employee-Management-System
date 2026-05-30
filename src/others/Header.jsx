@@ -9,7 +9,7 @@ const Header = ({handleLogout,loggedinUserData}) => {
             <div className="user-greetings text-[20px]">
               Hello,
               <span className="username block font-bold text-[30px]">
-                {loggedinUserData?.firstname || "User"} 👋
+                {loggedinUserData.firstname} 👋
                 
               </span>
             </div>

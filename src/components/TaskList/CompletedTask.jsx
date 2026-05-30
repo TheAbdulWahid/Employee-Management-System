@@ -1,10 +1,10 @@
 import React from "react";
 
-const NewTask = ({loggedinUserData,index}) => {
+const CompletedTask = ({loggedinUserData,index}) => {
   return (
     <div
       key={index}
-      className="newtask taskbox w-[400px] p-[30px] rounded min-h-[300px] shrink-0 relative"
+      className="completed-task taskbox w-[400px] p-[30px] rounded min-h-[300px] shrink-0 relative"
       style={{ backgroundColor: loggedinUserData.color }}
     >
       <div className="taskbox-header flex items-center justify-between mb-[20px] gap-[10px]">
@@ -49,4 +49,4 @@ const NewTask = ({loggedinUserData,index}) => {
   );
 };
 
-export default NewTask;
+export default CompletedTask;
