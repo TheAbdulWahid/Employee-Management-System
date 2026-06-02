@@ -6,19 +6,19 @@ import FailedTask from "./FailedTask";
 import { AppContext } from "../../context/AuthContext";
 
 
-const TaskCard = ({ loggedinUserData, index }) => {
+const TaskCard = ({ loggedinUserData }) => {
     const empData = useContext(AppContext)
   return (
     <div className="tasklist p-[20px] flex flex-nowrap gap-[20px] overflow-x-auto scrollbar-none ">
-      {loggedinUserData.tasks.map((e) => {
+      {loggedinUserData.tasks.map((e, index) => {
         if(e.active){
-            return <ActiveTask loggedinUserData={loggedinUserData} index={index} />
+            return <ActiveTask key={index} loggedinUserData={e} />
         }if(e.newTask){
-            return <NewTask loggedinUserData={loggedinUserData} index={index} />
+            return <NewTask key={index} loggedinUserData={e} />
         }if(e.completed){
-            return <CompletedTask loggedinUserData={loggedinUserData} index={index} />
+            return <CompletedTask key={index} loggedinUserData={e} />
         }if(e.failed){
-            return <FailedTask loggedinUserData={loggedinUserData} index={index} />
+            return <FailedTask key={index} loggedinUserData={e} />
         }
       })}
     </div>
