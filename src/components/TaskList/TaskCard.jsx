@@ -7,7 +7,6 @@ import { AppContext } from "../../context/AuthContext";
 
 
 const TaskCard = ({ loggedinUserData }) => {
-    const empData = useContext(AppContext)
   return (
     <div className="tasklist p-[20px] flex flex-nowrap gap-[20px] overflow-x-auto scrollbar-none ">
       {loggedinUserData.tasks.map((e, index) => {
@@ -22,7 +21,7 @@ const TaskCard = ({ loggedinUserData }) => {
         }
       })}
     </div>
-  );
+  );  
 };
 
 export default TaskCard;

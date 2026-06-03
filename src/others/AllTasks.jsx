@@ -1,154 +1,38 @@
 import React from "react";
 
-const AllTasks = () => {
+const AllTasks = ({ loggedinUserData }) => {
+  console.log(loggedinUserData);
   return (
     <div className="pt-[50px]">
       <h2 className="text-[50px] font-bold p-[20px]">All Tasks</h2>
-      <div className="tasklist p-[20px] pt-[0] flex flex-nowrap gap-[20px] overflow-x-auto scrollbar-none ">
-        <div className="taskbox w-[400px] bg-blue-400 p-[30px] rounded min-h-[300px] shrink-0">
-          <div className="taskbox-header flex items-center justify-between mb-[20px]">
-            <div className="left flex gap-[10px]">
-              <p className="status px-[10px] py-[4px] bg-green-600 rounded">
-                Status
-              </p>
-               <p className="assignee px-[10px] py-[4px] bg-green-600 rounded">
-                Assignee
-              </p>
-            </div>
-            <div className="right">
-              <p className="date">22 May 2026</p>
-            </div>
-          </div>
-          <div className="taskbox-body">
-            <div className="task-heading text-[28px] font-bold mb-[5px]">
-              Make a Youtube Video
-            </div>
-            <div className="task-des text-[14px]">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-                repellendus vitae nisi illum ducimus excepturi sunt quisquam
-                pariatur minus quidem fuga iusto nostrum reprehenderit eveniet
-                inventore, perferendis explicabo ex aut.
-              </p>
-              
-            </div>
-          </div>
+      <div className="tasklist p-[20px] pt-[0] overflow-x-auto scrollbar-none ">
+        <div className="tasklist-head flex gap-[20px] w-full mb-[20px]">
+          <p className="w-1/5 p-[10px] bg-black">Employee Name</p>
+          <p className="w-1/5 p-[10px] bg-blue-400">Accepted Task</p>
+          <p className="w-1/5 p-[10px] bg-green-400">New Task</p>
+          <p className="w-1/5 p-[10px] bg-yellow-400">Completed Task</p>
+          <p className="w-1/5 p-[10px] bg-red-400">Failed Task</p>
         </div>
-        <div className="taskbox w-[400px] bg-blue-400 p-[30px] rounded min-h-[300px] shrink-0">
-          <div className="taskbox-header flex items-center justify-between mb-[20px]">
-            <div className="left flex gap-[10px]">
-              <p className="status px-[10px] py-[4px] bg-green-600 rounded">
-                Status
-              </p>
-               <p className="assignee px-[10px] py-[4px] bg-green-600 rounded">
-                Assignee
-              </p>
-            </div>
-            <div className="right">
-              <p className="date">22 May 2026</p>
-            </div>
-          </div>
-          <div className="taskbox-body">
-            <div className="task-heading text-[28px] font-bold mb-[5px]">
-              Make a Youtube Video
-            </div>
-            <div className="task-des text-[14px]">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-                repellendus vitae nisi illum ducimus excepturi sunt quisquam
-                pariatur minus quidem fuga iusto nostrum reprehenderit eveniet
-                inventore, perferendis explicabo ex aut.
-              </p>
-              
-            </div>
-          </div>
-        </div>
-        <div className="taskbox w-[400px] bg-blue-400 p-[30px] rounded min-h-[300px] shrink-0">
-          <div className="taskbox-header flex items-center justify-between mb-[20px]">
-            <div className="left flex gap-[10px]">
-              <p className="status px-[10px] py-[4px] bg-green-600 rounded">
-                Status
-              </p>
-               <p className="assignee px-[10px] py-[4px] bg-green-600 rounded">
-                Assignee
-              </p>
-            </div>
-            <div className="right">
-              <p className="date">22 May 2026</p>
-            </div>
-          </div>
-          <div className="taskbox-body">
-            <div className="task-heading text-[28px] font-bold mb-[5px]">
-              Make a Youtube Video
-            </div>
-            <div className="task-des text-[14px]">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-                repellendus vitae nisi illum ducimus excepturi sunt quisquam
-                pariatur minus quidem fuga iusto nostrum reprehenderit eveniet
-                inventore, perferendis explicabo ex aut.
-              </p>
-              
-            </div>
-          </div>
-        </div>
-        <div className="taskbox w-[400px] bg-blue-400 p-[30px] rounded min-h-[300px] shrink-0">
-          <div className="taskbox-header flex items-center justify-between mb-[20px]">
-            <div className="left flex gap-[10px]">
-              <p className="status px-[10px] py-[4px] bg-green-600 rounded">
-                Status
-              </p>
-               <p className="assignee px-[10px] py-[4px] bg-green-600 rounded">
-                Assignee
-              </p>
-            </div>
-            <div className="right">
-              <p className="date">22 May 2026</p>
-            </div>
-          </div>
-          <div className="taskbox-body">
-            <div className="task-heading text-[28px] font-bold mb-[5px]">
-              Make a Youtube Video
-            </div>
-            <div className="task-des text-[14px]">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-                repellendus vitae nisi illum ducimus excepturi sunt quisquam
-                pariatur minus quidem fuga iusto nostrum reprehenderit eveniet
-                inventore, perferendis explicabo ex aut.
-              </p>
-              
-            </div>
-          </div>
-        </div>
-        <div className="taskbox w-[400px] bg-blue-400 p-[30px] rounded min-h-[300px] shrink-0">
-          <div className="taskbox-header flex items-center justify-between mb-[20px]">
-            <div className="left flex gap-[10px]">
-              <p className="status px-[10px] py-[4px] bg-green-600 rounded">
-                Status
-              </p>
-               <p className="assignee px-[10px] py-[4px] bg-green-600 rounded">
-                Assignee
-              </p>
-            </div>
-            <div className="right">
-              <p className="date">22 May 2026</p>
-            </div>
-          </div>
-          <div className="taskbox-body">
-            <div className="task-heading text-[28px] font-bold mb-[5px]">
-              Make a Youtube Video
-            </div>
-            <div className="task-des text-[14px]">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-                repellendus vitae nisi illum ducimus excepturi sunt quisquam
-                pariatur minus quidem fuga iusto nostrum reprehenderit eveniet
-                inventore, perferendis explicabo ex aut.
-              </p>
-              
-            </div>
-          </div>
+        <div className="tasklist-body flex flex-col gap-[20px] w-full mb-[20px]">
+          {loggedinUserData.map((e,idx) => {
+            return (
+              <div key={idx} className="record-row w-full flex gap-[20px]">
+                <p className="p-[10px] w-1/5 bg-black">{e.firstname}</p>
+                <p className="w-1/5 p-[10px] bg-blue-400">
+                  {e.taskNumbers.active}
+                </p>
+                <p className="w-1/5 p-[10px] bg-green-400">
+                  {e.taskNumbers.newTask}
+                </p>
+                <p className="w-1/5 p-[10px] bg-yellow-400">
+                  {e.taskNumbers.completed}
+                </p>
+                <p className="w-1/5 p-[10px] bg-red-400">
+                  {e.taskNumbers.failed}
+                </p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
