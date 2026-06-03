@@ -25,9 +25,11 @@ const App = () => {
 
   const userLogin = (email, password) => {
     if (email == "admin@example.com" && password == 123) {
-      console.log("This is admin");
       setUser("admin");
-      localStorage.setItem("loggedInUser", JSON.stringify({ role: "admin"}));
+      localStorage.setItem("loggedInUser", JSON.stringify({ role: "admin", data: authData.employeesData }));
+      const data = JSON.parse(localStorage.getItem("loggedInUser"))
+      console.log(data)
+      setLoggedinUserData(data.data);
     } else if (authData) {
       const employee = authData.employeesData.find((e) => e.email == email && e.password == password);
       if (employee) {
@@ -53,7 +55,7 @@ const App = () => {
   return (
     <>
       {user == "admin" ? (
-        <AdminDashboard handleLogout={handleLogout} />
+        <AdminDashboard handleLogout={handleLogout} loggedinUserData={loggedinUserData} />
       ) : user == "employee" ? (
         <EmployeeDashboard
           handleLogout={handleLogout}
