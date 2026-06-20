@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { AppContext } from "../context/AuthContext";
 
 const CreateTask = ({ loggedinUserData }) => {
   const [taskTitle, setTaskTitle] = useState("");
@@ -7,30 +8,50 @@ const CreateTask = ({ loggedinUserData }) => {
   const [taskCategory, setTaskCategory] = useState("");
   const [taskDescription, setTaskDescription] = useState("");
   const [newTask, setNewTask] = useState({});
+  const [userData, setUserData] = useContext(AppContext);
   const Submitted = (e) => {
     e.preventDefault();
 
-    setNewTask({
+    const task = {
       taskTitle,
       taskDate,
       taskAssignTo,
       taskCategory,
       taskDescription,
-    });
+      active: false,
+      newTask: true,
+      completed: false,
+      failed: false,
+    }
+    // setNewTask({
+    //   taskTitle,
+    //   taskDate,
+    //   taskAssignTo,
+    //   taskCategory,
+    //   taskDescription,
+    //   active: false,
+    //   newTask: true,
+    //   completed: false,
+    //   failed: false,
+    // });
 
-    loggedinUserData.map((e) => {
+    const data = userData.employeesData;
+
+    data.map((e) => {
       if (taskAssignTo == e.firstname) {
-        e.tasks.push(newTask)
-        console.log(e.tasks)
+        e.tasks.push(task);
+        e.taskNumbers.newTask += 1;
       }
     });
-
+    
     console.log(newTask);
     setTaskTitle("");
     setTaskDate("");
     setTaskAssignTo("");
     setTaskCategory("");
     setTaskDescription("");
+    setUserData({ employeesData: data });
+    localStorage.setItem("Employess", JSON.stringify(data));
   };
   return (
     <div className="p-[20px]">
