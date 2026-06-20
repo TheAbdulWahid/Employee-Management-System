@@ -4,19 +4,21 @@ import { getItems, setItems } from "../utils/localStorage";
 export const AppContext = createContext();
 
 const AuthContext = ({ children }) => {
-  const [userData, setUserData] = useState([]);
+  const [userData, setUserData] = useState({
+    employeesData: []
+  });
   
   useEffect(() => {
     setItems();
-    const { adminData, employeesData } = getItems();
-    setUserData({ adminData, employeesData });
+    const {employeesData} = getItems();
+    setUserData({employeesData});
   }, []);
 
  
 
   return (
     <div>
-      <AppContext.Provider value={userData}>{children}</AppContext.Provider>
+      <AppContext.Provider value={[userData, setUserData]}>{children}</AppContext.Provider>
     </div>
   );
 };
