@@ -3,7 +3,8 @@ import { AppContext } from "../../context/AuthContext";
 
 
 const ActiveTask = ({loggedinUserData}) => {
-  const userData1 = useContext(AppContext);
+  // const userData1 = useContext(AppContext);
+    const [userData, setUserData] = useContext(AppContext);
   return (
     <div
       className="active-task taskbox w-[400px] p-[30px] rounded min-h-[300px] shrink-0 relative"

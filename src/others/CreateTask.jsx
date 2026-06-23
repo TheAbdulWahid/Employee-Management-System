@@ -5,7 +5,7 @@ const CreateTask = ({ loggedinUserData }) => {
   const [taskTitle, setTaskTitle] = useState("");
   const [taskDate, setTaskDate] = useState("");
   const [taskAssignTo, setTaskAssignTo] = useState("");
-  const [taskCategory, setTaskCategory] = useState("");
+  const [category, setCategory] = useState("");
   const [taskDescription, setTaskDescription] = useState("");
   const [newTask, setNewTask] = useState({});
   const [userData, setUserData] = useContext(AppContext);
@@ -15,31 +15,24 @@ const CreateTask = ({ loggedinUserData }) => {
     const task = {
       taskTitle,
       taskDate,
-      taskAssignTo,
-      taskCategory,
+      category,
       taskDescription,
       active: false,
       newTask: true,
       completed: false,
       failed: false,
+      color: "oklch(79.2% 0.209 151.711)",
     }
-    // setNewTask({
-    //   taskTitle,
-    //   taskDate,
-    //   taskAssignTo,
-    //   taskCategory,
-    //   taskDescription,
-    //   active: false,
-    //   newTask: true,
-    //   completed: false,
-    //   failed: false,
-    // });
+
+
+    console.log(task)
 
     const data = userData.employeesData;
 
     data.map((e) => {
       if (taskAssignTo == e.firstname) {
         e.tasks.push(task);
+        console.log(task)
         e.taskNumbers.newTask += 1;
       }
     });
@@ -48,7 +41,7 @@ const CreateTask = ({ loggedinUserData }) => {
     setTaskTitle("");
     setTaskDate("");
     setTaskAssignTo("");
-    setTaskCategory("");
+    setCategory("");
     setTaskDescription("");
     setUserData({ employeesData: data });
     localStorage.setItem("Employess", JSON.stringify(data));
@@ -101,15 +94,16 @@ const CreateTask = ({ loggedinUserData }) => {
             <label>Task Category</label>
             <input
               onChange={(e) => {
-                setTaskCategory(e.target.value);
+                setCategory(e.target.value);
               }}
-              value={taskCategory}
+              value={category}
               type="text"
               placeholder="Enter Task Category"
               required
               className="border-1 border-white px-[25px] py-[10px] rounded outline-0"
             />
           </div>
+          
         </div>
         <div className="form-right w-1/2 flex flex-col gap-[20px]">
           <div className="task-des flex flex-col gap-[10px]">
